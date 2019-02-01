@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/zzz-y/Y-ui/issues"
   },
-  "homepage": "https://github.com/zzz-y/Y-ui#readme"
+  "homepage": "https://github.com/zzz-y/Y-ui#readme",
+  "dependencies": {
+    "vue": "^2.5.22"
+  }
 }
