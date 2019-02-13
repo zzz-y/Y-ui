@@ -25,12 +25,20 @@
       margin: 20px;
     }
   </style>
+  <style type="text/css">
+    .icon {
+      width: 1em;
+      height: 1em;
+    }
+  </style>
 </head>
 <body>
 <div id="app">
-  <y-button></y-button>
+  <y-button icon="settings">按钮</y-button>
+  <y-button icon="settings" :icon-right="true">按钮</y-button>
 </div>
 
 <script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1042770_a0835p26116.js"></script>
 </body>
 </html>
