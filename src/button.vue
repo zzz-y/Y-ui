@@ -1,8 +1,6 @@
 <template>
   <button class="y-button" :class="[iconRight?'icon-right':'']">
-    <svg class="icon" v-if="icon">
-      <use :xlink:href="`#i-${icon}`"></use>
-    </svg>
+    <y-icon class="icon" v-if="icon" :name="icon"></y-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -17,9 +15,6 @@
       iconRight: {
         type: Boolean,
         default: false,
-        validator(value) {
-
-        },
       }
     }
   }
