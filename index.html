@@ -19,6 +19,10 @@
   <y-button icon="settings" :loading="loading1" @click="loading1=!loading1">按钮</y-button>
   <y-button :loading="true">按钮</y-button>
   <y-button icon="settings" :icon-right="true">按钮</y-button>
+  <y-button-group>
+    <y-button icon="left">上一页</y-button>
+    <y-button icon="right" :icon-right="true">下一页</y-button>
+  </y-button-group>
 </div>
 
 <script src="./src/app.js"></script>
