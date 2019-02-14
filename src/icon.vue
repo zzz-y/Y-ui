@@ -12,8 +12,5 @@
 </script>
 
 <style lang="scss">
-  .y-icon {
-    width: 1em;
-    height: 1em;
-  }
+  .y-icon {width: 1em;height: 1em;}
 </style>
