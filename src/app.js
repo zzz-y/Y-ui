@@ -6,4 +6,9 @@ Vue.component('y-button', Button);
 Vue.component('y-icon', Icon);
 new Vue({
   el: '#app',
+  data() {
+    return {
+      loading1: false
+    }
+  }
 });

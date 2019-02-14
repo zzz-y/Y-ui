@@ -1,7 +1,8 @@
 <template>
-  <button class="y-button" :class="[iconRight?'icon-right':'']">
-    <y-icon class="icon" v-if="icon" :name="icon"></y-icon>
-    <y-icon class="loading" name="loading"></y-icon>
+  <button class="y-button" :class="[iconRight?'icon-right':'']"
+  @click="$emit('click')">
+    <y-icon class="icon" v-if="icon&&!loading" :name="icon"></y-icon>
+    <y-icon class="icon loading" v-if="loading" name="loading"></y-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -13,6 +14,10 @@
     name: 'button',
     props: {
       icon: {},
+      loading: {
+        type: Boolean,
+        default: false,
+      },
       iconRight: {
         type: Boolean,
         default: false,
