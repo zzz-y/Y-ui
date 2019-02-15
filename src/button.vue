@@ -10,8 +10,12 @@
 </template>
 
 <script>
+  import Icon from './icon';
   export default {
     name: 'button',
+    components: {
+      'y-icon': Icon,
+    },
     props: {
       icon: {},
       loading: {
