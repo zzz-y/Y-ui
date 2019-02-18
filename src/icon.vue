@@ -6,12 +6,13 @@
 
 <script>
   import './svg'
+
   export default {
-    name: 'icon',
+    name: 'y-icon',
     props: ['name']
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .y-icon {width: 1em;height: 1em;}
 </style>

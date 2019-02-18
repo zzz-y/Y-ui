@@ -1,6 +1,6 @@
 <template>
   <button class="y-button" :class="[iconRight?'icon-right':'']"
-  @click="$emit('click')">
+          @click="$emit('click')">
     <y-icon class="icon" v-if="icon&&!loading" :name="icon"></y-icon>
     <y-icon class="icon loading" v-if="loading" name="loading"></y-icon>
     <div class="content">
@@ -11,8 +11,9 @@
 
 <script>
   import Icon from './icon';
+
   export default {
-    name: 'button',
+    name: 'y-button',
     components: {
       'y-icon': Icon,
     },
@@ -30,11 +31,12 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @keyframes spin {
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
   }
+
   .y-button {font-size: var(--font-size);height: var(--button-height);padding: 0 1em;
     border-radius: var(--border-radius);border: 1px solid var(--border-color);background: var(--button-bg);
     display: inline-flex;justify-content: center;align-items: center;vertical-align: middle;
@@ -51,10 +53,11 @@
 
     &.icon-right {
       > .icon {order: 2;margin-right: 0;margin-left: .3em;}
+
       > .content {order: 1;}
     }
 
-    .loading{
+    .loading {
       animation: spin 2s infinite linear;
     }
   }
