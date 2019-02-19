@@ -22,7 +22,8 @@
 <body>
 <div id="app">
   <div class="box">
-    <y-input value="aaa"></y-input>
+    <y-input v-model="message"></y-input>
+    <p>{{message}}</p>
     <y-input value="aaa" disabled></y-input>
     <y-input value="aaa" readonly></y-input>
   </div>
