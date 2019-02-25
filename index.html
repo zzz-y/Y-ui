@@ -11,7 +11,7 @@
       --border-radius: 4px;--color: #333;--border-color: #999;--border-color-hover: #666;
     }
 
-    #app {margin: 20px;}
+    #app {}
   </style>
   <style>
     .box {
@@ -24,11 +24,23 @@
       background: rosybrown;
       border-radius: 4px;
     }
+    .demo{
+      border: 1px solid rosybrown;
+      min-height: 30px;
+    }
   </style>
 </head>
 <body>
 <div id="app">
-  <div class="box">
+    <y-layout style="height:100vh">
+      <y-header class="demo">header</y-header>
+      <y-layout>
+        <y-sider class="demo">Sider</y-sider>
+        <y-content class="demo">content</y-content>
+      </y-layout>
+      <y-footer class="demo">footer</y-footer>
+    </y-layout>
+  <div class="box" v-show="false">
     <y-row>
       <y-col span="23" offset="1" :ipad="{span: 12}" :pc="{span: 6}" :wide-pc="{span: 4}">
         <div class="border">qqq</div>
