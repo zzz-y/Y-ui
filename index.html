@@ -32,7 +32,10 @@
 </head>
 <body>
 <div id="app">
-    <y-layout style="height:100vh">
+  <y-button @click="openContextMenu($event)">打开菜单</y-button>
+  <y-context-menu :options="contentMenuOptions" id="sourceBlankMenu"></y-context-menu>
+
+    <y-layout style="height:100vh" v-show="false">
       <y-header class="demo">header</y-header>
       <y-layout>
         <y-sider class="demo">Sider</y-sider>
