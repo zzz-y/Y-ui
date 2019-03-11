@@ -45,18 +45,36 @@ new Vue({
         },
         {
           name: '重命名',
-          icon: '',
+          icon: 'info',
+          fun: () => {
+            console.log('重命名');
+          }
         },
         {
           name: '删除',
           icon: '',
           splitLine: true,
+          fun: () => {
+            console.log('删除');
+          }
         },
         {
           name: '移动数据源至',
           icon: '',
           splitLine: true,
-          subMenu: [],
+          subMenu: [
+            {
+              name: '数据源预览',
+              icon: '',
+              // hide: true,
+            },
+            {
+              name: '数据源可视化',
+              icon: '',
+              disable: true,
+              // hide: true,
+            },
+          ],
         },
         {
           name: '添加分组',
@@ -69,36 +87,41 @@ new Vue({
       ],
     }
   },
+  mounted() {
+    document.addEventListener('click', (e) => { // .children
+      this.closeAllMenu();
+      /*const sp = document.getElementById(`textPanel${this.titleItem.groupId}`);
+      if (sp) {
+        if (!sp.contains(e.target)) {
+          this.$emit('submit');
+        }
+      }*/
+    });
+    document.oncontextmenu = () => false;
+  },
   methods: {
     inputChange(e) {
       console.log('ddd', e)
     },
     openContextMenu(event) {
-      const ele = document.getElementsByClassName('source-tab')[0];
-      const isBlank = (event.target === ele) ? false : ele.contains(event.target);
-      if (!isBlank && event.button === 2 && this.current) {
-        //this.closeAllMenu();
-        $('#sourceBlankMenu')[0].style.left = `${event.clientX}px`;
-        $('#sourceBlankMenu')[0].style.top = `${event.clientY}px`;
-        $('#sourceBlankMenu')[0].style.display = 'block';
-        console.log(this.$refs[`sourceTab${this.current}`], event);
-        this.sourceBlankOptions[0].fun = () => {
-          this.addGroup();
+      document.oncontextmenu = () => false;
+      if (event.button === 2) {
+        this.closeAllMenu();
+        document.getElementById('sourceBlankMenu').style.left = `${event.clientX}px`;
+        document.getElementById('sourceBlankMenu').style.top = `${event.clientY}px`;
+        document.getElementById('sourceBlankMenu').style.display = 'block';
+        this.contentMenuOptions[0].fun = () => {
+          console.log('sss');
         };
-        this.sourceBlankOptions[1].fun = () => {
-          const item = sourceList.data.filter(d => d.division === this.current)[0];
-          this.$modal.show(dataSourceManager, {
-            name: item.name,
-            selectedVal: item.groups[0],
-            division: this.current,
-          }, {
-            draggable: true,
-            clickToClose: false,
-            classes: 'custom-modal',
-            width: 750,
-            height: 500,
-          });
+        this.contentMenuOptions[1].fun = () => {
+          console.log('ddd');
         };
+      }
+    },
+    closeAllMenu() {
+      const menus = document.getElementsByClassName('context-menu');
+      for (let i = 0; i < menus.length; i++) {
+        menus[i].style.display = 'none';
       }
     },
   }

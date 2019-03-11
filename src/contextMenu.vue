@@ -8,9 +8,9 @@
              @click="onclick(item)"
              @mouseover="mouseOver($event, item)"
              @mouseleave="mouseLeave($event, item)">
-            <i :class="item.icon"></i>
+            <y-icon class="icon" :name="item.icon"></y-icon>
             {{item.name}}
-            <i class="el-icon-arrow-right" v-if="item.subMenu"></i>
+            <y-icon class="icon" name="right" v-if="item.subMenu"></y-icon>
             <context-menu class="children" v-if="item.subMenu" :options="item.subMenu" style="margin-top: -35px;"></context-menu>
         </div>
     </div>
@@ -62,7 +62,7 @@ export default {
             padding-right: 20px;
             min-width: 50px;
             &:hover{
-                border-color: var(--border-color-hover);
+                background-color: #eeeeee;
             }
             &.split-line{
                 border-bottom: 1px solid var(--border-color);

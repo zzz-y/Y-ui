@@ -28,11 +28,16 @@
       border: 1px solid rosybrown;
       min-height: 30px;
     }
+    .click-wrapper{
+      width: 100px;
+      height: 100px;
+      background: rosybrown;
+    }
   </style>
 </head>
 <body>
 <div id="app">
-  <y-button @click="openContextMenu($event)">打开菜单</y-button>
+  <div class="click-wrapper" @mouseup="openContextMenu($event)">打开菜单</div>
   <y-context-menu :options="contentMenuOptions" id="sourceBlankMenu"></y-context-menu>
 
     <y-layout style="height:100vh" v-show="false">
