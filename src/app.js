@@ -11,6 +11,8 @@ import Sider from './sider';
 import Content from './content';
 import Footer from './footer';
 import contextMenu from './contextMenu';
+import Toast from './toast';
+import plugin from './plugin';
 
 Vue.component('y-button', Button);
 Vue.component('y-icon', Icon);
@@ -24,6 +26,8 @@ Vue.component('y-sider', Sider);
 Vue.component('y-content', Content);
 Vue.component('y-footer', Footer);
 Vue.component('y-context-menu', contextMenu);
+Vue.component('y-toast', Toast);
+Vue.use(plugin);
 
 new Vue({
   el: '#app',
@@ -100,6 +104,9 @@ new Vue({
     document.oncontextmenu = () => false;
   },
   methods: {
+    showToast() {
+      this.$toast('当前功能不稳定，如果遇到bug请关闭该功能')
+    },
     inputChange(e) {
       console.log('ddd', e)
     },

@@ -37,10 +37,10 @@
 </head>
 <body>
 <div id="app">
-  <div class="click-wrapper" @mouseup="openContextMenu($event)">打开菜单</div>
+  <button @click="showToast">button</button>
+  <!--<div class="click-wrapper" @mouseup="openContextMenu($event)">打开菜单</div>
   <y-context-menu :options="contentMenuOptions" id="sourceBlankMenu"></y-context-menu>
-
-    <y-layout style="height:100vh" v-show="false">
+  <y-layout style="height:100vh" v-show="false">
       <y-header class="demo">header</y-header>
       <y-layout>
         <y-sider class="demo">Sider</y-sider>
@@ -77,7 +77,7 @@
         <y-button icon="right" :icon-right="true">下一页</y-button>
       </y-button-group>
     </div>
-  </div>
+  </div>-->
 </div>
 
 <script src="./src/app.js"></script>
